@@ -1,0 +1,114 @@
+html{
+    background-color: #1C2A44;
+    font-family: 'Arial';
+}
+
+.login-box{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+
+    background: #18181B;
+    box-shadow: 0 15px 25px #00FFFF, 0 20px 20px #000013;
+    border-radius: 25px;
+
+}
+
+.login-box h2 {
+    
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 0;
+    color: #CDDCE9;
+    text-align: center;
+
+}
+
+.login-box .user-box input {
+
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #CDDCE9;
+    margin-bottom: 30px;
+    
+    border: none;
+    border-bottom: 1px solid #CDDCE9;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    
+    position: relative;
+    left: 0;
+    top: -60px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #CDDCE9;
+
+    /* Não deixa o mouse afetar o elemento*/
+    pointer-events: none;
+    
+    /* Cria animação entre duas etapas*/
+    transition: 500ms;
+}
+
+/* Não entendi direito essa bagunça...
+* Não mexi mais a partir daqui, so alterei as cores
+*/
+.login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -85px;
+            left: 0;
+            color: #19A5A5;
+            font-size: 12px;
+        }
+       
+        
+        #submit {
+            padding: 10px 20px;
+            color: #CBBDDB;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            letter-spacing: 4px;
+            border: 1px solid #19A5A5;
+            margin: auto;
+        }
+        
+        #submit:hover {
+            background: #19A5A5;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #19A5A5, 0 0 25px #19A5A5, 0 0 50px #19A5A5, 0 0 100px #19A5A5;
+        }
+        
+        .button-form {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+        
+        #register {
+            font-size: 14px;
+            text-decoration: none;
+            color: #CBBDDB;
+            margin: auto;
+            width: 60%;
+            text-align: center;
+        }
+        
+        #register a {
+            margin: auto;
+            color: #19A5A5;
+            text-decoration: none;
+        }
