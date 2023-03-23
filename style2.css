@@ -1,0 +1,106 @@
+html{
+
+    background-color: #1C2A44;
+    font-family: 'Arial';
+}
+
+.container{
+    
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 25%;
+    height: 200px;
+    background-color: #18181B;
+
+    display: inline-block;
+    margin: 10px;
+
+    border-radius: 25px;
+    text-align: center;
+
+    box-shadow: 0px 4px 4px #00FFFF, 0 6px 6px 0 #000013;
+    
+}
+
+/*@keyframes permite definir animações personalizadas
+* "typing" - nome da animação, nossa escolha
+* 0%{}, 20%{}, 40%{}, 100%{} - etapas da animação. Como uma barra de progresso
+*/ 
+
+@keyframes typing{
+    
+    0% {
+        width: 0
+    }
+    20% {
+        width: 20%;
+    }
+    40% {
+        width: 20%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* from, to - como a animação inicia e como termina
+* nada definido para o inicio
+*/
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #00FFFF;
+    }
+}
+
+h1 {
+
+    width: 0%;
+    overflow: hidden;
+    cursor: pointer;
+
+    border-right: 0.15em solid #00FFFF;
+
+    /*Como o navegador trata espaços em branco
+    * nowrap - ignora as quebras de linha*/
+    white-space: nowrap;
+    
+    color: white;
+    
+    /*Chamando animações
+    *
+    * steps(100, end) - 60 define quantos frames têm nossa animação. Quanto mais, mais suave.
+    * "end" indica que quando a animação chegar ao fim, o valor final da animação será mantido.
+    * forwards - indica que a animação deve manter seu último estado após seu término.
+    *
+    * step-end - animação passa instantaneamente do valor atual para o próximo valor, sem suavizaçao.
+    * infinite - mesmo de loop.
+    */
+    animation: typing 2s steps(30, end) forwards, blink-caret 850ms step-end infinite;
+}
+
+/* So pra ficar mais bunitin. ver style.css*/
+h1::after{
+    
+    display:block;
+    content: '';
+    
+    border-bottom: solid 1px #00FFFF;
+    padding-bottom: 1%;
+    
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+h1:hover::after{
+    transform: scaleX(0.8);
+}
