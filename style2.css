@@ -1,0 +1,63 @@
+html{
+    background-color: #1C2A44;
+    font-family: 'Arial';
+}
+
+.container{
+    /*Deixa "solto" na pagina
+    * usamos top, botton, right e left para manipula-lo
+    */
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color: #18181B;
+
+    display: inline-block;
+    margin: 10px;
+
+    border-radius: 25px;
+    cursor: pointer;
+
+
+    /*Todas as propriedades por 0.4 segundos*/
+    transition: all 0.4s;
+}
+
+.container:hover .card:hover{
+
+    /*"transform" modifica a posição, o tamanho, a rotação e o inclinação de um elemento.
+    * Aplica a transformação em 3D, movendo o elemento de sua posição original (translate3d(0px, 0px, 0px)),
+    * aumentando seu tamanho em 10% em relação ao tamanho original (scale3d(1.1, 1.1, 1)),
+    * não aplicando rotação (rotateX(0deg) rotateY(0deg) rotateZ(0deg))
+    * e sem inclinação (skew(0deg, 0deg)). 
+    */
+    transform: translate3d(0px, 0px, 0px) 
+    scale3d(1.1, 1.1, 1) 
+    rotateX(0deg) 
+    rotateY(0deg) 
+    rotateZ(0deg) 
+    skew(0deg, 0deg);
+
+    /*"transform-style" especifica como os elementos filhos são posicionados em relação 
+    * ao elemento pai que tem uma transformação aplicada. 
+    * "preserve-3d" mantém a perspectiva em 3D do elemento pai para seus elementos filhos.
+    */
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 4px #00FFFF;
+}
+
+p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #CDDCE9;
+}
